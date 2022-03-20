@@ -20,7 +20,9 @@ function show() {
     var link = "https://api.datamuse.com/words?ml=" + word + "&md=d";
     get_req(link).then(function (response) {
         console.log(response);
-        document.getElementById("definition").innerHTML = response[0].defs;
+        let output = ''
+        output +=response[0].defs?.map((value, idx) => `${idx + 1}. ${value} \n\n`).join("")
+        document.getElementById("definition").innerHTML = output;
 
         // get first 10 synonyms
 
