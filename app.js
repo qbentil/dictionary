@@ -21,7 +21,7 @@ function show() {
     get_req(link).then(function (response) {
         console.log(response);
         let output = ''
-        output +=response[0].defs?.map((value, idx) => `${idx + 1}. ${value} \n\n`).join("")
+        output +=response[0].defs?.map((value, idx) => `${idx + 1}. ${value} &nbsp; `).join("")
         document.getElementById("definition").innerHTML = output;
 
         // get first 10 synonyms
